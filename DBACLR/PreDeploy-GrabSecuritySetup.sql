@@ -12,7 +12,7 @@ BEGIN
 END;
 GO
 
-:r "C:\Users\andrew.lackenby\Documents\Projects\Library\Tools\DBACLR\AssemblySecuritySetup.sql"
+:r "C:\Users\andrew.lackenby\Documents\GitHub\DBACLR\AssemblySecuritySetup.sql"
 
 GO
 USE [$(DatabaseName)];

@@ -45,5 +45,18 @@ public partial class UserDefinedFunctions
         Regex rgx = new Regex(whiteSpacePattern);
         return rgx.Replace(inputValue, replacement);
     }
-   
+
+    [SqlFunction(IsDeterministic = true, IsPrecise = true)]
+    public static string EvaluateRegex(string pattern, string evalString)
+    {
+        Regex rg = new Regex(pattern);
+        string retval = "";
+        MatchCollection matches = rg.Matches(evalString);
+        for (int count = 0; count < matches.Count; count++)
+        {
+            retval += matches[count].Value;
+        }
+        return retval;
+    }
+
 }
